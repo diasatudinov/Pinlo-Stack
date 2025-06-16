@@ -1,13 +1,20 @@
+//
+//  SRAchievementsViewModel.swift
+//  Pinlo Stack
+//
+//
+
+
 import SwiftUI
 
 class SRAchievementsViewModel: ObservableObject {
     
     @Published var achievements: [SRAchievement] = [
-        SRAchievement(image: "achi1SR", isAchieved: false),
-        SRAchievement(image: "achi2SR", isAchieved: false),
-        SRAchievement(image: "achi3SR", isAchieved: false),
-        SRAchievement(image: "achi4SR", isAchieved: false),
-        SRAchievement(image: "achi5SR", isAchieved: false)
+        SRAchievement(image: "achievIcon1", isAchieved: false),
+        SRAchievement(image: "achievIcon2", isAchieved: false),
+        SRAchievement(image: "achievIcon3", isAchieved: false),
+        SRAchievement(image: "achievIcon4", isAchieved: false),
+        SRAchievement(image: "achievIcon5", isAchieved: false)
 
     ] {
         didSet {
@@ -20,7 +27,7 @@ class SRAchievementsViewModel: ObservableObject {
         
     }
     
-    private let userDefaultsAchievementsKey = "achievementsKeySR"
+    private let userDefaultsAchievementsKey = "achievementsKeyPS"
     
     func achieveToggle(_ achive: SRAchievement) {
         guard let index = achievements.firstIndex(where: { $0.id == achive.id })
