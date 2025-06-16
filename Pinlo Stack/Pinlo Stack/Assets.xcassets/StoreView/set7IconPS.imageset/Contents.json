@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "set7IconPS.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
