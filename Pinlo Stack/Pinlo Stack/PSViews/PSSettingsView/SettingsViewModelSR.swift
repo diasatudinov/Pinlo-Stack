@@ -1,3 +1,10 @@
+//
+//  SettingsViewModelSR.swift
+//  Pinlo Stack
+//
+//
+
+
 import SwiftUI
 
 class SettingsViewModelSR: ObservableObject {

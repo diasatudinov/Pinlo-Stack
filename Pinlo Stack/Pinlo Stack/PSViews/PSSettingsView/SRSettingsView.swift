@@ -1,61 +1,78 @@
+//
+//  SRSettingsView.swift
+//  Pinlo Stack
+//
+//  Created by Dias Atudinov on 16.06.2025.
+//
+
+
 import SwiftUI
 
-struct SRSettingsView: View {
+struct PSSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-
+    
     @ObservedObject var settingsVM: SettingsViewModelSR
     var body: some View {
         ZStack {
             
             ZStack {
-                Image(.settingsBgSR)
+                Image(.settingsBgPS)
                     .resizable()
                     .scaledToFit()
-                VStack(alignment: .leading, spacing: 30) {
+                VStack(spacing: 15) {
                     
-                    HStack(spacing: 30) {
-                        
-                        Image(.soundsTextSR)
+                    Spacer()
+                    VStack(spacing: 5) {
+                        Image(.soundsTextPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:31)
-                        Button {
-                            withAnimation {
-                                settingsVM.soundEnabled.toggle()
-                            }
-                        } label: {
-                            
-                            Image(settingsVM.soundEnabled ? .onSR:.offSR)
+                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:36)
+                        
+                        HStack {
+                            Image(.offTextPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
+                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 40:24)
+                            
+                            Button {
+                                withAnimation {
+                                    settingsVM.soundEnabled.toggle()
+                                }
+                            } label: {
+                                
+                                Image(settingsVM.soundEnabled ? .onPS:.offPS)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
+                            }
+                            
+                            Image(.onTextPS)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 40:24)
                         }
-                        
                     }
                     
-                    HStack(spacing: 50) {
-                        Image(.musicTextSR)
+                    VStack(spacing: 5) {
+                        Image(.lamguageTextPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:31)
+                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:36)
                         
-                        Button {
-                            withAnimation {
-                                settingsVM.musicEnabled.toggle()
-                            }
-                        } label: {
-                            
-                            Image(settingsVM.musicEnabled ? .onSR:.offSR)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
-                        }
-                        
+                        Image(.languageIconPS)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
                     }
                     
-                }
+                    Image(.resetBtnPS)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 160:80)
+                    
+                }.padding(.bottom, 30)
                 
-            }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 800:400)
+            }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 750:420)
             
             VStack {
                 HStack {
@@ -64,30 +81,21 @@ struct SRSettingsView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconSR)
+                            Image(.backIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:75)
+                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
                         }
                         Spacer()
-                       
-                        Image(.settingsTextSR)
-                            .resizable()
-                            .scaledToFit()
                         
-                        Spacer()
-                        Image(.backIconSR)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:75)
-                            .opacity(0)
+                        CoinBgSR()
                     }.padding([.horizontal, .top])
                 }
                 Spacer()
             }
         }.background(
             ZStack {
-                Image(.appBgSR)
+                Image(.appBgPS)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
@@ -97,5 +105,5 @@ struct SRSettingsView: View {
 }
 
 #Preview {
-    SRSettingsView(settingsVM: SettingsViewModelSR())
+    PSSettingsView(settingsVM: SettingsViewModelSR())
 }
