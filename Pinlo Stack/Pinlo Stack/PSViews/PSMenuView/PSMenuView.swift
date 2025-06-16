@@ -17,7 +17,7 @@ struct PSMenuView: View {
     
     @StateObject var achievementVM = SRAchievementsViewModel()
     @StateObject var settingsVM = SettingsViewModelSR()
-//    @StateObject var shopVM = SRAbilitiesViewModel()
+    @StateObject var shopVM = LaubergeShopViewModel()
     
     var body: some View {
         
@@ -144,7 +144,7 @@ struct PSMenuView: View {
 //            SRGameLevelsView()
         }
         .fullScreenCover(isPresented: $showStore) {
-//            SRAbilitiesView(viewModel: shopVM)
+            PSStoreView(viewModel: shopVM)
         }
         .fullScreenCover(isPresented: $showAchievement) {
             PSAchivementsView(viewModel: achievementVM)
