@@ -2,7 +2,6 @@
 //  ContentView.swift
 //  Pinlo Stack
 //
-//  Created by Dias Atudinov on 16.06.2025.
 //
 
 import SwiftUI
