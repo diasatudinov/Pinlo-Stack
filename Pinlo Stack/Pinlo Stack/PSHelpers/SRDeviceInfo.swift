@@ -1,3 +1,10 @@
+//
+//  SRDeviceInfo.swift
+//  Pinlo Stack
+//
+//
+
+
 import UIKit
 
 class SRDeviceInfo {
