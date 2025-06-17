@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "set1green_ball.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
