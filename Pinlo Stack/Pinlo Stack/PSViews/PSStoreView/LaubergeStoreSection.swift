@@ -61,9 +61,9 @@ class LaubergeShopViewModel: ObservableObject {
         loadBoughtItem()
     }
     
-    private let userDefaultsBgKey = "bgKeyPS"
-    private let userDefaultsPersonKey = "skinsKeyPS"
-    private let userDefaultsBoughtKey = "boughtItemsPSNe"
+    private let userDefaultsBgKey = "bgKeyPS1"
+    private let userDefaultsPersonKey = "skinsKeyPS1"
+    private let userDefaultsBoughtKey = "boughtItemsPSNe1"
 
     
     func saveCurrentBg() {

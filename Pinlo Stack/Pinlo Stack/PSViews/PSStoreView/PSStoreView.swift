@@ -56,7 +56,9 @@ struct PSStoreView: View {
                             }
                         }
                 }
+                
                 Spacer()
+                
                 if section == .ball {
                     VStack {
                         achievementItem(item: viewModel.shopTeamItems.filter({ $0.section == .ball })[0])
@@ -86,7 +88,6 @@ struct PSStoreView: View {
                         
                     }
                 }
-                
                 
                 Spacer()
             }
