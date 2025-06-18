@@ -1,5 +1,5 @@
 //
-//  SRSettingsView.swift
+//  PSSettingsView.swift
 //  Pinlo Stack
 //
 //
@@ -10,7 +10,7 @@ import SwiftUI
 struct PSSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var settingsVM: SettingsViewModelSR
+    @ObservedObject var settingsVM: SettingsViewModelPS
     var body: some View {
         ZStack {
             
@@ -104,5 +104,5 @@ struct PSSettingsView: View {
 }
 
 #Preview {
-    PSSettingsView(settingsVM: SettingsViewModelSR())
+    PSSettingsView(settingsVM: SettingsViewModelPS())
 }

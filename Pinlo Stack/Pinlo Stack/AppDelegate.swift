@@ -1,3 +1,10 @@
+//
+//  AppDelegate.swift
+//  Pinlo Stack
+//
+//
+
+
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {

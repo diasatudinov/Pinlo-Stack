@@ -7,10 +7,10 @@
 import SwiftUI
 
 struct PSAchivementsView: View {
-    @StateObject var user = UserSR.shared
+    @StateObject var user = UserPS.shared
     @Environment(\.presentationMode) var presentationMode
 
-    @ObservedObject var viewModel: SRAchievementsViewModel
+    @ObservedObject var viewModel: PSAchievementsViewModel
     var body: some View {
         ZStack {
             
@@ -25,12 +25,12 @@ struct PSAchivementsView: View {
                             Image(.backIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:80)
                         }
                         
                         Spacer()
                         
-                        CoinBgSR()
+                        CoinBgPS()
                       
                     }.padding([.top, .horizontal])
                 }
@@ -38,7 +38,7 @@ struct PSAchivementsView: View {
                 Image(.achievementsTextPS)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 180:130)
+                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 180:130)
                
                 Spacer()
                 
@@ -60,7 +60,7 @@ struct PSAchivementsView: View {
         )
     }
     
-    @ViewBuilder func achievementItem(item: SRAchievement) -> some View {
+    @ViewBuilder func achievementItem(item: PSAchievement) -> some View {
         ZStack {
             
             Image(item.isAchieved ? item.image:"\(item.image)Off")
@@ -81,14 +81,14 @@ struct PSAchivementsView: View {
                     Image(item.isAchieved ? .checkIconPS : .xmarkIconPS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 100:50)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 100:50)
                 }
-            }.padding(.horizontal, SRDeviceInfo.shared.deviceType == .pad ? 140:40)
-        }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:92)
+            }.padding(.horizontal, PSDeviceInfo.shared.deviceType == .pad ? 140:40)
+        }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:92)
     }
     
 }
 
 #Preview {
-    PSAchivementsView(viewModel: SRAchievementsViewModel())
+    PSAchivementsView(viewModel: PSAchievementsViewModel())
 }

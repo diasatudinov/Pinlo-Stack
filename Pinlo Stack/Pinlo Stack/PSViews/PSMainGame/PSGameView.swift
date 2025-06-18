@@ -10,10 +10,10 @@ import SwiftUI
 struct PSGameView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var gameWon = false
-    @ObservedObject var shopVM: LaubergeShopViewModel
+    @ObservedObject var shopVM: PSShopViewModel
     
-    @State var gameScene: GameScene = {
-        let scene = GameScene(size: UIScreen.main.bounds.size)
+    @State var gameScene: PSGameScene = {
+        let scene = PSGameScene(size: UIScreen.main.bounds.size)
         scene.scaleMode = .resizeFill
         return scene
     }()
@@ -38,7 +38,7 @@ struct PSGameView: View {
                         Image(.backIconPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:80)
                     }
                     
                     Spacer()
@@ -51,29 +51,29 @@ struct PSGameView: View {
                     Image(.bonus1PS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:80)
                     
                     Image(.bonus2PS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:80)
                 }
                 
                 HStack {
                     Image(.bonus3PS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:80)
                     
                     Image(.bonus4PS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:80)
                     
                     Image(.bonus5PS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:80)
                 }
             }
             
@@ -93,7 +93,7 @@ struct PSGameView: View {
                                 Image(.homeIconPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 170:100)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 170:100)
                             }
                             
                             Button {
@@ -102,11 +102,11 @@ struct PSGameView: View {
                                 Image(.restartIconPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 170:100)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 170:100)
                             }
                         }
-                    }.padding(.bottom, SRDeviceInfo.shared.deviceType == .pad ? 80:50)
-                }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 700:400)
+                    }.padding(.bottom, PSDeviceInfo.shared.deviceType == .pad ? 80:50)
+                }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 700:400)
             }
             
             
@@ -123,13 +123,13 @@ struct PSGameView: View {
         )
         .onReceive(NotificationCenter.default.publisher(for: .gameWon)) { _ in
             gameWon = true
-            UserSR.shared.updateUserMoney(for: 10)
+            UserPS.shared.updateUserMoney(for: 10)
         }
     }
 }
 
 #Preview {
-    PSGameView(shopVM: LaubergeShopViewModel())
+    PSGameView(shopVM: PSShopViewModel())
 }
 
 extension Notification.Name {

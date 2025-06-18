@@ -2,15 +2,14 @@
 //  PSLevelChooseView.swift
 //  Pinlo Stack
 //
-//  Created by Dias Atudinov on 18.06.2025.
 //
 
 import SwiftUI
 
 struct PSLevelChooseView: View {
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var user = UserSR.shared
-    @ObservedObject var shopVM: LaubergeShopViewModel
+    @StateObject var user = UserPS.shared
+    @ObservedObject var shopVM: PSShopViewModel
     @State var currentIndex: Int?
     @State var showGame = false
     var body: some View {
@@ -26,14 +25,14 @@ struct PSLevelChooseView: View {
                             Image(.backIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:80)
                         }
                         
                         
                         
                         Spacer()
                         
-                        CoinBgSR()
+                        CoinBgPS()
                         
                     }.padding([.top, .horizontal])
                 }
@@ -41,7 +40,7 @@ struct PSLevelChooseView: View {
                 Image(.levelSelectPS)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 240:131)
+                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 240:131)
                 
                 let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 5)
                 
@@ -54,10 +53,10 @@ struct PSLevelChooseView: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text("\(index + 1)")
-                                        .font(.system(size: SRDeviceInfo.shared.deviceType == .pad ? 70:39))
+                                        .font(.system(size: PSDeviceInfo.shared.deviceType == .pad ? 70:39))
                                         .foregroundStyle(.yellow)
                                    
-                                }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 120:60)
+                                }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 120:60)
                                     .onTapGesture {
                                         showGame = true
                                         DispatchQueue.main.async {
@@ -87,5 +86,5 @@ struct PSLevelChooseView: View {
 }
 
 #Preview {
-    PSLevelChooseView(shopVM: LaubergeShopViewModel())
+    PSLevelChooseView(shopVM: PSShopViewModel())
 }

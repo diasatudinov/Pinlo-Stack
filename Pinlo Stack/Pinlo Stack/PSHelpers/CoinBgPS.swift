@@ -1,5 +1,5 @@
 //
-//  CoinBgSR.swift
+//  CoinBgPS.swift
 //  Pinlo Stack
 //
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoinBgPS: View {
-    @StateObject var user = UserSR.shared
+    @StateObject var user = UserPS.shared
     var body: some View {
         ZStack {
             Image(.moneyViewBgPS)
@@ -16,14 +16,14 @@ struct CoinBgPS: View {
                 .scaledToFit()
             
             Text("\(user.money)")
-                .font(.system(size: SRDeviceInfo.shared.deviceType == .pad ? 58:32, weight: .black))
+                .font(.system(size: PSDeviceInfo.shared.deviceType == .pad ? 58:32, weight: .black))
                 .foregroundStyle(.yellow)
                 .textCase(.uppercase)
-                .offset(x: SRDeviceInfo.shared.deviceType == .pad ? 10:5, y: SRDeviceInfo.shared.deviceType == .pad ? 0:0)
+                .offset(x: PSDeviceInfo.shared.deviceType == .pad ? 10:5, y: PSDeviceInfo.shared.deviceType == .pad ? 0:0)
             
             
             
-        }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 120:80)
+        }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 120:80)
         
     }
 }

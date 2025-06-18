@@ -1,5 +1,5 @@
 //
-//  BallColor.swift
+//  PSGameScene.swift
 //  Pinlo Stack
 //
 //
@@ -9,7 +9,7 @@ import SpriteKit
 
 class PSGameScene: SKScene {
     
-    let shopVM = LaubergeShopViewModel()
+    let shopVM = PSShopViewModel()
     
     // 1) Определяем все возможные цвета и соответствующие им имена PNG в Assets
     enum BallColor: String, CaseIterable {

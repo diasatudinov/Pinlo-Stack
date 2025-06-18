@@ -8,9 +8,9 @@ import SwiftUI
 
 struct PSStoreView: View {
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var user = UserSR.shared
-    @State var section: LaubergeStoreSection = .ball
-    @ObservedObject var viewModel: LaubergeShopViewModel
+    @StateObject var user = UserPS.shared
+    @State var section: PSStoreSection = .ball
+    @ObservedObject var viewModel: PSShopViewModel
     @State var skinIndex: Int = 0
     @State var backIndex: Int = 0
     var body: some View {
@@ -24,12 +24,12 @@ struct PSStoreView: View {
                         Image(.backIconPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:80)
                     }
                     
                     Spacer()
                     
-                    CoinBgSR()
+                    CoinBgPS()
                     
                 }.padding([.horizontal])
                 
@@ -37,7 +37,7 @@ struct PSStoreView: View {
                     Image(.ballTextPS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 120:70)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 120:70)
                         .offset(y: section == .ball ? 20 : 0)
                         .onTapGesture {
                             withAnimation {
@@ -48,7 +48,7 @@ struct PSStoreView: View {
                     Image(.locationsTextPS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 120:70)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 120:70)
                         .offset(y: section == .backgrounds ? 20 : 0)
                         .onTapGesture {
                             withAnimation {
@@ -101,7 +101,7 @@ struct PSStoreView: View {
         )
     }
     
-    @ViewBuilder func achievementItem(item: LaubergeItem) -> some View {
+    @ViewBuilder func achievementItem(item: PSItem) -> some View {
         
         
         ZStack {
@@ -120,16 +120,16 @@ struct PSStoreView: View {
                                 Image(.selectedTextPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:33)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 60:33)
                             } else {
                                 Image(.selectTextPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:33)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 60:33)
                             }
                             
                         }
-                    }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:100)
+                    }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:100)
                 } else {
                     VStack {
                         Spacer()
@@ -137,10 +137,10 @@ struct PSStoreView: View {
                             Image(user.money >= item.price ? "price\(item.price)PS" : "price\(item.price)PSOff")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:33)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 60:33)
                             
                         }
-                    }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:100)
+                    }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:100)
                 }
             } else {
                 if viewModel.boughtItems.contains(where: { $0.name == item.name }) {
@@ -152,16 +152,16 @@ struct PSStoreView: View {
                                 Image(.selectedTextPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 100:50)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 100:50)
                             } else {
                                 Image(.selectTextPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 100:50)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 100:50)
                             }
                             
                         }
-                    }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 300:170)
+                    }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 300:170)
                 } else {
                     VStack {
                         Spacer()
@@ -169,14 +169,14 @@ struct PSStoreView: View {
                             Image(user.money >= item.price ? "price\(item.price)PS" : "price\(item.price)PSOff")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 100:50)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 100:50)
                             
                         }
-                    }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 300:170)
+                    }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 300:170)
                 }
             }
             
-        }.frame(height: item.section == .ball ? SRDeviceInfo.shared.deviceType == .pad ? 200:100 : SRDeviceInfo.shared.deviceType == .pad ? 300:170)
+        }.frame(height: item.section == .ball ? PSDeviceInfo.shared.deviceType == .pad ? 200:100 : PSDeviceInfo.shared.deviceType == .pad ? 300:170)
             .onTapGesture {
                 if item.section == .ball {
                     if viewModel.boughtItems.contains(where: { $0.name == item.name }) {
@@ -213,5 +213,5 @@ struct PSStoreView: View {
 }
 
 #Preview {
-    PSStoreView(viewModel: LaubergeShopViewModel())
+    PSStoreView(viewModel: PSShopViewModel())
 }

@@ -59,7 +59,7 @@ struct PSWV: UIViewRepresentable {
     }
 }
 
-struct SRWVWrap: View {
+struct PSWVWrap: View {
     @State private var nAllow = true
     var urlString = ""
     @AppStorage("firstOpen") var firstOpen = true

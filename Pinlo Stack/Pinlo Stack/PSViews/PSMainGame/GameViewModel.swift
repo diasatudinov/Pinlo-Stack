@@ -9,8 +9,8 @@ import SpriteKit
 
 
 struct SRViewContainer: UIViewRepresentable {
-    @StateObject var user = UserSR.shared
-    var scene: GameScene
+    @StateObject var user = UserPS.shared
+    var scene: PSGameScene
     
     func makeUIView(context: Context) -> SKView {
         let skView = SKView(frame: UIScreen.main.bounds)

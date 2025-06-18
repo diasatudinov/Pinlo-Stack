@@ -15,9 +15,9 @@ struct PSMenuView: View {
 
     @AppStorage("dailyTaskRecieved1") private var dailyTaskRecieved = false
     
-    @StateObject var achievementVM = SRAchievementsViewModel()
-    @StateObject var settingsVM = SettingsViewModelSR()
-    @StateObject var shopVM = LaubergeShopViewModel()
+    @StateObject var achievementVM = PSAchievementsViewModel()
+    @StateObject var settingsVM = SettingsViewModelPS()
+    @StateObject var shopVM = PSShopViewModel()
     
     var body: some View {
         
@@ -30,12 +30,12 @@ struct PSMenuView: View {
                         Image(.settingsIconPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 130:65)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 130:65)
                     }
                     
                     Spacer()
                     
-                    CoinBgSR()
+                    CoinBgPS()
                     
                     
                     
@@ -53,7 +53,7 @@ struct PSMenuView: View {
                             Image(.playIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:146)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:146)
                             
                             
                                 
@@ -68,7 +68,7 @@ struct PSMenuView: View {
                             Image(.storeIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:146)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:146)
                             
                             
                                 
@@ -82,7 +82,7 @@ struct PSMenuView: View {
                             Image(.dailyTaskIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:146)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:146)
                             
                             
                                 
@@ -96,7 +96,7 @@ struct PSMenuView: View {
                             Image(.achievementIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 200:146)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 200:146)
                             
                         }
                     }
@@ -124,11 +124,11 @@ struct PSMenuView: View {
                             Image(dailyTaskRecieved ? .recievedBtnPS : .getBtnPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:100)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:100)
                         }
-                    }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 750:450)
+                    }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 750:450)
                     
-                }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 700:400)
+                }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 700:400)
             }
             
         }

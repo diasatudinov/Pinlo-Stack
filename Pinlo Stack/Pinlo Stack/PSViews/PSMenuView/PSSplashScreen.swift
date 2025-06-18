@@ -11,7 +11,7 @@ struct PSSplashScreen: View {
     @State private var progress: CGFloat = 0.0
     @State private var timer: Timer?
     private var loaderWidth: CGFloat = {
-       return SRDeviceInfo.shared.deviceType == .pad ? 500:250
+       return PSDeviceInfo.shared.deviceType == .pad ? 500:250
     }()
     var body: some View {
         ZStack {
@@ -28,13 +28,13 @@ struct PSSplashScreen: View {
                     
                     
                 }
-                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 250:149)
+                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 250:149)
                 
                 
                 Image(.loadingTextPS)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 120:64)
+                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 120:64)
                     .scaleEffect(scale)
                     .animation(
                         Animation.easeInOut(duration: 0.8)
