@@ -13,7 +13,6 @@ struct PSGameView: View {
     @ObservedObject var shopVM: LaubergeShopViewModel
     
     @State var gameScene: GameScene = {
-        
         let scene = GameScene(size: UIScreen.main.bounds.size)
         scene.scaleMode = .resizeFill
         return scene

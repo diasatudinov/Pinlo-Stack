@@ -37,14 +37,14 @@ class GameScene: SKScene {
     }
     
     private func setupShelves() {
-        let names = ["shelf_left", "shelf_right", "shelf_left", "shelf_right"]
+        let names = ["shelf_right", "shelf_left","shelf_right" , "shelf_left" ]
         let total = names.count
-        let spacingY = frame.height / CGFloat(total + 1)
+        let spacingY = (frame.height) / CGFloat(total + 1)
         for (i, name) in names.enumerated() {
             let sprite = SKSpriteNode(imageNamed: name)
             sprite.size = CGSize(width: 207, height: 43)
             sprite.position = CGPoint(
-                x: (i % 2 == 0)
+                x: (i % 2 == 1)
                 ? frame.minX + sprite.size.width/2
                 : frame.maxX - sprite.size.width/2,
                 y: frame.maxY - spacingY * CGFloat(i + 1)
@@ -156,6 +156,7 @@ class GameScene: SKScene {
             shelves[tIdx].balls.append(ball)
         }
         
+        
         // Обновляем расположение шариков на всех полках
         for i in shelves.indices {
             layoutShelf(at: i)
@@ -178,6 +179,15 @@ class GameScene: SKScene {
                 ball.run(seq)
             }
             shelves[tIdx].balls.removeAll()
+        }
+        
+        if shelves[tIdx].balls.count == 0 {
+            // Тут уже удалена последняя группа из 4 шариков,
+            // но нужно проверить все полки:
+            let allEmpty = shelves.allSatisfy { $0.balls.isEmpty }
+            if allEmpty {
+                NotificationCenter.default.post(name: .gameWon, object: nil)
+            }
         }
     }
     

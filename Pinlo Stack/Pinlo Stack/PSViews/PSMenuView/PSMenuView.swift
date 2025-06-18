@@ -141,7 +141,7 @@ struct PSMenuView: View {
             }
         )
         .fullScreenCover(isPresented: $showGame) {
-//            SRGameLevelsView()
+            PSLevelChooseView(shopVM: shopVM)
         }
         .fullScreenCover(isPresented: $showStore) {
             PSStoreView(viewModel: shopVM)
