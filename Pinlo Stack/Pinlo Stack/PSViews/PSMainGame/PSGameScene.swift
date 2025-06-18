@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class PSGameScene: SKScene {
     
     let shopVM = LaubergeShopViewModel()
     

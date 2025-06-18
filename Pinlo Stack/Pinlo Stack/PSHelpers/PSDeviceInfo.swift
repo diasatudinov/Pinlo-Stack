@@ -1,5 +1,5 @@
 //
-//  SRDeviceInfo.swift
+//  PSDeviceInfo.swift
 //  Pinlo Stack
 //
 //
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SRDeviceInfo {
-    static let shared = SRDeviceInfo()
+class PSDeviceInfo {
+    static let shared = PSDeviceInfo()
     
     var deviceType: UIUserInterfaceIdiom
     

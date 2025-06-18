@@ -25,13 +25,13 @@ struct PSSettingsView: View {
                         Image(.soundsTextPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:36)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 60:36)
                         
                         HStack {
                             Image(.offTextPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 40:24)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 40:24)
                             
                             Button {
                                 withAnimation {
@@ -42,13 +42,13 @@ struct PSSettingsView: View {
                                 Image(settingsVM.soundEnabled ? .onPS:.offPS)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
+                                    .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 80:44)
                             }
                             
                             Image(.onTextPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 40:24)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 40:24)
                         }
                     }
                     
@@ -56,22 +56,22 @@ struct PSSettingsView: View {
                         Image(.lamguageTextPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 60:36)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 60:36)
                         
                         Image(.languageIconPS)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 80:44)
+                            .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 80:44)
                     }
                     
                     Image(.resetBtnPS)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 160:80)
+                        .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 160:80)
                     
                 }.padding(.bottom, 30)
                 
-            }.frame(height: SRDeviceInfo.shared.deviceType == .pad ? 750:420)
+            }.frame(height: PSDeviceInfo.shared.deviceType == .pad ? 750:420)
             
             VStack {
                 HStack {
@@ -83,11 +83,11 @@ struct PSSettingsView: View {
                             Image(.backIconPS)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: SRDeviceInfo.shared.deviceType == .pad ? 150:80)
+                                .frame(height: PSDeviceInfo.shared.deviceType == .pad ? 150:80)
                         }
                         Spacer()
                         
-                        CoinBgSR()
+                        CoinBgPS()
                     }.padding([.horizontal, .top])
                 }
                 Spacer()

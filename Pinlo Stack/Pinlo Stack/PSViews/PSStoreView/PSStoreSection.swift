@@ -1,5 +1,5 @@
 //
-//  LaubergeStoreSection.swift
+//  PSStoreSection.swift
 //  Pinlo Stack
 //
 //
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum LaubergeStoreSection: Codable, Hashable {
+enum PSStoreSection: Codable, Hashable {
     case backgrounds
     case ball
 }
 
-class LaubergeShopViewModel: ObservableObject {
+class PSShopViewModel: ObservableObject {
     @Published var shopTeamItems: [LaubergeItem] = [
         
         LaubergeItem(name: "bg1", image: "gameBg1PS", icon: "backIcon1PS", section: .backgrounds, price: 50),
@@ -97,7 +97,7 @@ class LaubergeShopViewModel: ObservableObject {
            let loadedItem = try? JSONDecoder().decode(LaubergeItem.self, from: savedData) {
             currentPersonItem = loadedItem
         } else {
-            currentPersonItem = shopTeamItems[4]
+            currentPersonItem = shopTeamItems[5]
             print("No saved data found")
         }
     }
@@ -125,6 +125,6 @@ struct LaubergeItem: Codable, Hashable {
     var name: String
     var image: String
     var icon: String
-    var section: LaubergeStoreSection
+    var section: PSStoreSection
     var price: Int
 }

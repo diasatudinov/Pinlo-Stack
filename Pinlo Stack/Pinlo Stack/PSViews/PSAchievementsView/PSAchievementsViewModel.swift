@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class SRAchievementsViewModel: ObservableObject {
+class PSAchievementsViewModel: ObservableObject {
     
     @Published var achievements: [SRAchievement] = [
         SRAchievement(image: "achievIcon1", isAchieved: false),

@@ -1,5 +1,5 @@
 //
-//  UserSR.swift
+//  UserPS.swift
 //  Pinlo Stack
 //
 //
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class UserSR: ObservableObject {
+class UserPS: ObservableObject {
     
-    static let shared = UserSR()
+    static let shared = UserPS()
     
     @AppStorage("money") var storedMoney: Int = 100
     @Published var money: Int = 100

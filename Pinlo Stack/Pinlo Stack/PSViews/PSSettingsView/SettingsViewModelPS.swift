@@ -1,5 +1,5 @@
 //
-//  SettingsViewModelSR.swift
+//  SettingsViewModelPS.swift
 //  Pinlo Stack
 //
 //
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class SettingsViewModelSR: ObservableObject {
+class SettingsViewModelPS: ObservableObject {
     @AppStorage("musicEnabled") var musicEnabled: Bool = true
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
 }
