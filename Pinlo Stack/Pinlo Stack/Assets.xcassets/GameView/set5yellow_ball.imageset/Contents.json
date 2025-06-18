@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "set5yellow_ball.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
