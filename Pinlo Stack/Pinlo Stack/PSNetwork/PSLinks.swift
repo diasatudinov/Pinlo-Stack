@@ -11,7 +11,7 @@ class PSLinks {
     
     static let shared = PSLinks()
     
-    static let winStarData = "https://argosonligame.top/game"
+    static let winStarData = "https://pinlostack.top/get"
     
     @AppStorage("finalUrl") var finalURL: URL?
     
